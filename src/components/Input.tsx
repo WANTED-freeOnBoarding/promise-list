@@ -5,7 +5,7 @@ const Input = () => {
   //  const todo = useInput("");
   const [inputValue, setInputValue] = useState("");
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (inputValue !== "") {
       console.log(inputValue);
@@ -14,7 +14,7 @@ const Input = () => {
     }
   };
 
-  const onChange = (e: any) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
     setInputValue(e.target.value);
   };
