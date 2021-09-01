@@ -1,18 +1,21 @@
 import React from "react";
+import { ITodo } from "store/store";
+import { ReactComponent as DeleteSvg } from "assets/svg/delete.svg";
 
 interface ToDoItemProps {
-  title: string;
-  date: Date;
-  isCheck: boolean;
+  todo: ITodo;
 }
 
 const ToDoItem = (props: ToDoItemProps) => {
+  const { todo } = props;
   return (
     <div className="todo">
       <div className="todo__checkbox">대충 체크박스</div>
-      <div className="todo__title">대충 제목</div>
-      <div className="todo__date">대충 날짜</div>
-      <div className="todo__delete">대충 쓰레기통</div>
+      <div className="todo__title">{todo.content}</div>
+      <div className="todo__date">{todo.createAt}</div>
+      <div className="todo__delete">
+        <DeleteSvg />
+      </div>
     </div>
   );
 };
