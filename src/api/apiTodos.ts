@@ -2,7 +2,7 @@ import axios from "axios";
 
 const BASE_URL = `https://rockpell-todo-list.herokuapp.com/`;
 
-export const getTodos = async () => {
+export const getTodosAPI = async () => {
   try {
     const response = await axios.get(BASE_URL + `todo`);
     console.log(response);
@@ -12,7 +12,7 @@ export const getTodos = async () => {
   }
 };
 
-export const createTodo = async (inputValue: string) => {
+export const createTodoAPI = async (inputValue: string) => {
   try {
     const response = await axios.post(BASE_URL + `todo`, {
       content: inputValue,
@@ -24,7 +24,7 @@ export const createTodo = async (inputValue: string) => {
   }
 };
 
-export const updateTodo = async (
+export const updateTodoAPI = async (
   id: number,
   isCheck?: boolean,
   content?: string
@@ -42,7 +42,7 @@ export const updateTodo = async (
   }
 };
 
-export const deleteTodo = async (id: number) => {
+export const deleteTodoAPI = async (id: number) => {
   try {
     const response = await axios.post(BASE_URL + `todo/${id}`);
     console.log(response);

@@ -1,30 +1,85 @@
+import { ITodo } from "store/todos/saga";
 import * as type from "./types";
-import * as handler from "./handlers";
-import { reducerUtils } from "store/todos/handlers";
+
+interface Istate {
+  todos: {
+    data: ITodo[];
+    error: boolean | null;
+  };
+}
 
 const initialState = {
-  todos: reducerUtils.initial(),
+  todos: {
+    data: [],
+    error: null,
+  },
 };
 
-export default function handleTodos(state = initialState, action: any) {
+export default function reducer(state: Istate = initialState, action: any) {
+  const prevState: ITodo[] = state.todos.data!;
+
   switch (action.type) {
-    case type.GET_TODO:
     case type.GET_TODO_SUCCESS:
-    case type.GET_TODO_ERROR:
-      return handler.getTodoActions(type.GET_TODO)(state, action);
-    case type.CREATE_TODO:
+      return {
+        ...state,
+        todos: {
+          data: action.payload,
+          error: null,
+        },
+      };
+
     case type.CREATE_TODO_SUCCESS:
-    case type.CREATE_TODO_ERROR:
-      return handler.createTodoActions(type.CREATE_TODO)(state, action);
-    case type.UPDATE_TODO:
+      const newTodos = [action.payload, ...prevState];
+      return {
+        ...state,
+        todos: {
+          data: newTodos,
+          error: null,
+        },
+      };
+
     case type.UPDATE_TODO_SUCCESS:
-    case type.UPDATE_TODO_ERROR:
-      return handler.updateTodoActions(type.UPDATE_TODO)(state, action);
-    case type.DELETE_TODO:
+      const updateId = prevState.findIndex(
+        (item: ITodo) => item.id === action.payload.id
+      );
+      const newTodoList = [...prevState];
+      newTodoList.splice(updateId, 1, action.payload);
+      return {
+        ...state,
+        todos: {
+          data: newTodoList,
+          error: null,
+        },
+      };
+
     case type.DELETE_TODO_SUCCESS:
-    case type.DELETE_TODO_ERROR:
-      return handler.deleteTodoActions(type.CREATE_TODO)(state, action);
+      const filteredTodos = prevState.filter(
+        (todo: ITodo) => todo.id !== action.payload.id
+      );
+      return {
+        ...state,
+        todos: {
+          data: filteredTodos,
+          error: null,
+        },
+      };
+
+    case type.ERROR:
+      return {
+        ...state,
+        todos: {
+          data: action.payload,
+          error: true,
+        },
+      };
+
     default:
-      return state;
+      return {
+        ...state,
+        todos: {
+          data: prevState,
+          error: null,
+        },
+      };
   }
 }

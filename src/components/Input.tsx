@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createTodo } from "api/apiTodos";
+import { createTodos } from "store/todos/actions";
 
 const Input = () => {
   //  const todo = useInput("");
@@ -11,7 +11,7 @@ const Input = () => {
     e.preventDefault();
     if (inputValue !== "") {
       console.log(inputValue);
-      dispatch(createTodo(inputValue));
+      dispatch(createTodos(inputValue));
       setInputValue("");
     }
   };

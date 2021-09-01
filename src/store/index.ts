@@ -1,9 +1,9 @@
 import { all } from "@redux-saga/core/effects";
 import { combineReducers } from "redux";
-import todos from "./todos";
+import reducer from "./todos/reducers";
 import { todosSaga } from "./todos/saga";
 
-const rootReducer = combineReducers({ todos });
+const rootReducer = reducer;
 
 export function* rootSaga() {
   yield all([todosSaga()]);

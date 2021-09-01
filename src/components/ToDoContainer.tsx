@@ -8,9 +8,10 @@ import { RootState } from "store";
 import { ITodo } from "store/todos";
 
 const ToDoContainer = () => {
-  const { data, loading, error } = useSelector(
-    (state: RootState) => state.todos
-  );
+  const { data, error } = useSelector((state: RootState) => state.todos);
+  if (data && data.data && data.data.todoList) {
+    console.log("============", data.data.todoList);
+  }
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTodos());
@@ -18,9 +19,12 @@ const ToDoContainer = () => {
 
   return (
     <>
-      {data?.map((item: ITodo) => (
-        <ToDoItem key={item.id} todo={item} />
-      ))}
+      {data &&
+        data.data &&
+        data.data.todoList &&
+        data.data.todoList.map((item: ITodo) => (
+          <ToDoItem key={item.id} todo={item} />
+        ))}
       <ToDoLists />
       <Input />
     </>
