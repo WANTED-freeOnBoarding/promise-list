@@ -1,10 +1,12 @@
 import { createStore } from "redux";
 
-const CREATE: string = "CREATE";
-const DELETE: string = "DELETE";
-const UPDATE: string = "UPDATE";
+const CREATE: string = "todos/CREATE";
+const DELETE: string = "todos/DELETE";
+const UPDATE: string = "todos/UPDATE";
 
-interface ITodo {
+let nextId = 1;
+
+export interface ITodo {
   id: number;
   content: string;
   isCheck: boolean;
@@ -24,13 +26,6 @@ const createTodo = (todo: ITodo) => {
   };
 };
 
-const deleteTodo = (todo: ITodo) => {
-  return {
-    type: DELETE,
-    todo,
-  };
-};
-
 const updateTodo = (todo: ITodo) => {
   return {
     type: UPDATE,
@@ -38,7 +33,14 @@ const updateTodo = (todo: ITodo) => {
   };
 };
 
-export const actionCreators = {
+const deleteTodo = (todo: ITodo) => {
+  return {
+    type: DELETE,
+    todo,
+  };
+};
+
+export const actions = {
   createTodo,
   deleteTodo,
   updateTodo,
@@ -58,7 +60,10 @@ const reducer = (state: ITodo[] = [], action: Iaction) => {
       const newTodos: ITodo[] = [newTodo, ...state];
       return newTodos;
     case UPDATE:
-      return state; // @TODO
+      const updateId = state.findIndex((item) => item.id === id);
+      const newTodoList = [...state];
+      newTodoList.splice(updateId, 1, action.todo);
+      return newTodoList;
     case DELETE:
       const filteredTodos: ITodo[] = state.filter((todo) => todo.id !== id);
       return filteredTodos;
