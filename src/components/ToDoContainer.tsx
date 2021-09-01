@@ -1,19 +1,24 @@
-import React from "react";
-import Container from "./Container";
+import React, { useEffect } from "react";
 import ToDoLists from "./ToDoLists";
 import Input from "./Input";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ToDoItem from "./ToDoItem";
-import { ITodo } from "store/store";
+import { getTodos } from "store/todos/actions";
+import { RootState } from "store";
+import { ITodo } from "store/todos";
 
 const ToDoContainer = () => {
-  const todos = useSelector((state: ITodo[]) => state);
-  console.log(todos);
-  console.log(typeof todos);
+  const { data, loading, error } = useSelector(
+    (state: RootState) => state.todos
+  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getTodos());
+  }, [dispatch]);
 
   return (
     <>
-      {todos.map((item: ITodo) => (
+      {data?.map((item: ITodo) => (
         <ToDoItem key={item.id} todo={item} />
       ))}
       <ToDoLists />

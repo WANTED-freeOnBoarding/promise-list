@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { useInput } from "hooks/useInput";
 import { useDispatch } from "react-redux";
-import { actions } from "store/store";
+import { createTodo } from "api/apiTodos";
 
 const Input = () => {
   //  const todo = useInput("");
@@ -12,16 +11,8 @@ const Input = () => {
     e.preventDefault();
     if (inputValue !== "") {
       console.log(inputValue);
+      dispatch(createTodo(inputValue));
       setInputValue("");
-      // @TODO : api request
-      const todo = {
-        id: 1, //
-        content: inputValue,
-        isCheck: false,
-        createAt: new Date(), //
-        updateAt: new Date(), //
-      };
-      dispatch(actions.createTodo(todo));
     }
   };
 
