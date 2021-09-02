@@ -23,7 +23,7 @@ const Input = () => {
 
   return (
     <>
-      <form className="form__todo" onSubmit={onSubmit}>
+      <form className="form__todo" onSubmit={(e) => onSubmit(e)}>
         <input
           className="input__todo"
           type="text"
@@ -32,7 +32,7 @@ const Input = () => {
           value={inputValue}
           onChange={onChange}
         />
-        <button>+</button>
+        <button className="plus__todo">+</button>
       </form>
     </>
   );

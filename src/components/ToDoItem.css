@@ -1,3 +1,7 @@
+h1 {
+  border-bottom: 2px solid darkolivegreen;
+}
+
 .todo {
   width: 500px;
   background-color: pink;
@@ -11,6 +15,7 @@
   text-align: center;
   margin: auto;
   margin-top: 25px;
+  overflow: scroll;
 }
 
 .input__todo {
@@ -24,23 +29,31 @@
 }
 
 .form__todo {
-  position: fixed;
-  bottom: 50px;
-  left: 125px;
 }
 
 button {
   border: none;
-  transform: translateY(10px);
   background-color: pink;
+}
+
+.plus__todo {
+  transform: translateY(10px);
   height: 70px;
   width: 70px;
   font-size: 40px;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 20px;
+  margin-left: 5px;
 }
 
 .todo__lists {
-  width: 500px;
-  height: 200px;
+  margin-top: 25px;
+  width: 100vh;
+  height: 500px;
+  overflow: scroll;
+}
+
+.todo__container {
+  height: 80vh;
+  margin: auto;
 }

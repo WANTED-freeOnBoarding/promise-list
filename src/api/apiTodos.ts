@@ -34,13 +34,19 @@ export const updateTodoAPI = async (props: updateProps) => {
   const { id, isCheck, content } = props;
   try {
     if (content) {
-      const response = await axios.post(BASE_URL + `todo/${id}`, content);
+      const response = await axios.post(BASE_URL + `todo/${id}`, {
+        content: content,
+      });
       console.log(response);
+      console.log(content);
 
       return response;
     } else {
-      const response = await axios.post(BASE_URL + `todo/${id}`, isCheck);
+      const response = await axios.post(BASE_URL + `todo/${id}`, {
+        isCheck: isCheck,
+      });
       console.log(response);
+      console.log(isCheck);
 
       return response;
     }

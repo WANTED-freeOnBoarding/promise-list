@@ -13,15 +13,13 @@ interface ToDoItemProps {
 const ToDoItem = (props: ToDoItemProps) => {
   const { todo } = props;
   const dispatch = useDispatch();
-  const [isCheck, setIsCheck] = useState(false);
-  const [content, setContent] = useState(todo.content);
   const [isEdit, setIsEdit] = useState(false);
   const taskNameRef = useRef(null);
 
   useEffect(() => {
     const updateTasKName = taskNameRef.current! as HTMLElement;
     if (updateTasKName) updateTasKName.focus();
-  }, [isEdit, isCheck, dispatch]);
+  }, [isEdit, dispatch]);
 
   const onDelete = () => {
     dispatch(deleteTodos(todo.id));
@@ -35,12 +33,10 @@ const ToDoItem = (props: ToDoItemProps) => {
     dispatch(updateTodos(todo.id, undefined, updateText));
   };
 
-  const onCheck: React.MouseEventHandler<HTMLInputElement> = () => {
-    setIsCheck(!isCheck);
-    dispatch(updateTodos(todo.id, isCheck));
+  const onCheck = () => {
+    console.log(">>", todo.isCheck);
+    dispatch(updateTodos(todo.id, !todo.isCheck));
   };
-
-  const onChange = () => {};
 
   const onEditStart = () => {
     setIsEdit(true);
@@ -51,8 +47,8 @@ const ToDoItem = (props: ToDoItemProps) => {
       <input
         type="checkbox"
         className="todo__checkbox"
-        onClick={onCheck}
-        checked={isCheck}
+        onChange={onCheck}
+        checked={todo.isCheck}
       />
       <div
         className="todo__title"
@@ -65,7 +61,7 @@ const ToDoItem = (props: ToDoItemProps) => {
       <div className="todo__date">{todo.updated_at}</div>
       <div className="todo__delete">
         {isEdit ? (
-          <button onClick={(e) => onEditFinish(e)}>확인</button>
+          <button onClick={(e) => onEditFinish(e)}>OK</button>
         ) : (
           <EditSvg onClick={onEditStart} />
         )}

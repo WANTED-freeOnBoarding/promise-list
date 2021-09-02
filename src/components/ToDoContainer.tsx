@@ -15,18 +15,22 @@ const ToDoContainer = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTodos());
-  }, []);
+  }, [error]);
 
   return (
     <>
-      {data &&
-        data.data &&
-        data.data.todoList &&
-        data.data.todoList.map((item: ITodo) => (
-          <ToDoItem key={item.id} todo={item} />
-        ))}
-      <ToDoLists />
-      <Input />
+      <div className="todo__container">
+        <div className="todo__lists">
+          {data &&
+            data.data &&
+            data.data.todoList &&
+            data.data.todoList.map((item: ITodo) => (
+              <ToDoItem key={item.id} todo={item} />
+            ))}
+        </div>
+        <ToDoLists />
+        <Input />
+      </div>
     </>
   );
 };

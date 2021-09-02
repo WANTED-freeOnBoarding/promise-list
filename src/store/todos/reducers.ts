@@ -10,7 +10,15 @@ interface Istate {
 
 const initialState = {
   todos: {
-    data: [],
+    data: [
+      {
+        id: 0,
+        content: "할 일을 입력하세요",
+        isCheck: true,
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+    ],
     error: null,
   },
 };
@@ -23,7 +31,7 @@ export default function reducer(state: Istate = initialState, action: any) {
       return {
         ...state,
         todos: {
-          data: action.payload,
+          data: action.payload || [],
           error: null,
         },
       };
@@ -33,7 +41,7 @@ export default function reducer(state: Istate = initialState, action: any) {
       return {
         ...state,
         todos: {
-          data: newTodos,
+          data: newTodos || [],
           error: null,
         },
       };
@@ -47,7 +55,7 @@ export default function reducer(state: Istate = initialState, action: any) {
       return {
         ...state,
         todos: {
-          data: newTodoList,
+          data: newTodoList || [],
           error: null,
         },
       };
@@ -59,7 +67,7 @@ export default function reducer(state: Istate = initialState, action: any) {
       return {
         ...state,
         todos: {
-          data: filteredTodos,
+          data: filteredTodos || [],
           error: null,
         },
       };
@@ -68,7 +76,7 @@ export default function reducer(state: Istate = initialState, action: any) {
       return {
         ...state,
         todos: {
-          data: action.payload,
+          data: [],
           error: true,
         },
       };
@@ -77,7 +85,7 @@ export default function reducer(state: Istate = initialState, action: any) {
       return {
         ...state,
         todos: {
-          data: prevState,
+          data: prevState || [],
           error: null,
         },
       };
