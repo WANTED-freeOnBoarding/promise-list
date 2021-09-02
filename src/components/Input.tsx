@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { createTodos } from "store/todos/actions";
 
 const Input = () => {
-  //  const todo = useInput("");
   const [inputValue, setInputValue] = useState("");
   const dispatch = useDispatch();
 

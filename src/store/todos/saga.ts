@@ -6,7 +6,7 @@ import * as type from "./types";
 export interface ITodo {
   id: number;
   content: string;
-  isCheck: true | false;
+  isCheck: boolean;
   created_at: Date;
   updated_at: Date;
 }
@@ -27,7 +27,7 @@ export const createPromiseSaga = (type: string, promiseCreator: any) => {
   const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `ERROR`];
   return function* saga(action: any) {
     try {
-      const payload: ITodo[] = yield call(promiseCreator, action.payload);
+      const payload: object = yield call(promiseCreator, action.payload);
       yield put({ type: SUCCESS, payload });
     } catch (e) {
       yield put({ type: ERROR, error: true, payload: e });
@@ -39,7 +39,7 @@ export const updatePromiseSaga = (type: string, promiseCreator: any) => {
   const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `ERROR`];
   return function* saga(action: any) {
     try {
-      const payload: ITodo = yield call(promiseCreator, action.payload);
+      const payload: object = yield call(promiseCreator, action.payload);
       yield put({ type: SUCCESS, payload });
     } catch (e) {
       yield put({ type: ERROR, error: true, payload: e });

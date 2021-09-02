@@ -48,8 +48,9 @@ const ToDoItem = (props: ToDoItemProps) => {
         type="checkbox"
         className="todo__checkbox"
         onChange={onCheck}
-        checked={todo.isCheck}
+        checked={todo.isCheck ?? false}
       />
+      {todo.isCheck}
       <div
         className="todo__title"
         ref={taskNameRef}

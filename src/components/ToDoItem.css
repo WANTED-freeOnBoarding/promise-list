@@ -57,3 +57,12 @@ button {
   height: 80vh;
   margin: auto;
 }
+
+.todo__date {
+  font-size: 10px;
+  color: gray;
+}
+
+.todo__checkbox {
+  border: none;
+}

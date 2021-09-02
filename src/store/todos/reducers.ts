@@ -14,7 +14,7 @@ const initialState = {
       {
         id: 0,
         content: "할 일을 입력하세요",
-        isCheck: true,
+        isCheck: false,
         created_at: new Date(),
         updated_at: new Date(),
       },
