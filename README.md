@@ -39,6 +39,8 @@ https://user-images.githubusercontent.com/60090391/131777468-97a12e02-4924-4aa0-
         - Read : 읽고
         - Update : 수정하고
         - Delete : 지운다!
+        - 그리고 Node.js 기반의 api를 이용하여 간단한 요청을 주고 받습니다.
+        
     - 구현하기 위해 사용된 기술 스택
         - HTML
         - CSS
