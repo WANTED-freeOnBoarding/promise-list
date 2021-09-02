@@ -10,6 +10,8 @@ interface ToDoItemProps {
   todo: ITodo;
 }
 
+/* todo list 각각의 아이템 */
+
 const ToDoItem = (props: ToDoItemProps) => {
   const { todo } = props;
   const dispatch = useDispatch();

@@ -23,6 +23,8 @@ const initialState = {
   },
 };
 
+/* reducers */
+
 export default function reducer(state: Istate = initialState, action: any) {
   const prevState: ITodo[] = state.todos.data!;
 
