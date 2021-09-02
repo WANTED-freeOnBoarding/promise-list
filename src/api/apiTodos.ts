@@ -2,6 +2,8 @@ import axios from "axios";
 
 const BASE_URL = `https://rockpell-todo-list.herokuapp.com/`;
 
+/* api에 요청을 보내는 함수들입니다 */
+
 export const getTodosAPI = async () => {
   try {
     const response = await axios.get(BASE_URL + `todo`);
