@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ITodo } from "store/todos";
 import { ReactComponent as DeleteSvg } from "assets/svg/delete.svg";
+import { ReactComponent as EditSvg } from "assets/svg/edit.svg";
+
 import { useDispatch } from "react-redux";
 import { updateTodos, deleteTodos } from "store/todos/actions";
-
+import "./ToDoItem.css";
 interface ToDoItemProps {
   todo: ITodo;
 }
@@ -19,17 +21,21 @@ const ToDoItem = (props: ToDoItemProps) => {
   useEffect(() => {
     const updateTasKName = taskNameRef.current! as HTMLElement;
     if (updateTasKName) updateTasKName.focus();
-  }, [isEdit]);
+  }, [isEdit, isCheck, dispatch]);
 
   const onDelete = () => {
     dispatch(deleteTodos(todo.id));
   };
-  const onEditFinish = () => {
+  const onEditFinish = (e: any) => {
+    e.preventDefault();
+    const updateTasKName = taskNameRef.current! as HTMLElement;
+    const updateText = updateTasKName.innerText;
+    console.log(updateText);
     setIsEdit(false);
-    dispatch(updateTodos(todo.id, undefined, todo.content));
+    dispatch(updateTodos(todo.id, undefined, updateText));
   };
 
-  const onCheck = () => {
+  const onCheck: React.MouseEventHandler<HTMLInputElement> = () => {
     setIsCheck(!isCheck);
     dispatch(updateTodos(todo.id, isCheck));
   };
@@ -53,19 +59,16 @@ const ToDoItem = (props: ToDoItemProps) => {
         ref={taskNameRef}
         contentEditable={isEdit}
         suppressContentEditableWarning={true}
-        onChange={onChange}
       >
         {todo.content}
       </div>
-      <div className="todo__date">{todo.updateAt}</div>
-      <div className="todo__edit">
-        {isEdit ? (
-          <button onClick={onEditFinish}>확인</button>
-        ) : (
-          <DeleteSvg onClick={onEditStart} />
-        )}
-      </div>
+      <div className="todo__date">{todo.updated_at}</div>
       <div className="todo__delete">
+        {isEdit ? (
+          <button onClick={(e) => onEditFinish(e)}>확인</button>
+        ) : (
+          <EditSvg onClick={onEditStart} />
+        )}
         <DeleteSvg onClick={onDelete} />
       </div>
     </div>

@@ -24,17 +24,24 @@ export const createTodoAPI = async (inputValue: string) => {
   }
 };
 
-export const updateTodoAPI = async (
-  id: number,
-  isCheck?: boolean,
-  content?: string
-) => {
+interface updateProps {
+  id: number;
+  isCheck?: boolean;
+  content?: string;
+}
+
+export const updateTodoAPI = async (props: updateProps) => {
+  const { id, isCheck, content } = props;
   try {
     if (content) {
       const response = await axios.post(BASE_URL + `todo/${id}`, content);
+      console.log(response);
+
       return response;
     } else {
       const response = await axios.post(BASE_URL + `todo/${id}`, isCheck);
+      console.log(response);
+
       return response;
     }
   } catch (e) {
@@ -44,7 +51,7 @@ export const updateTodoAPI = async (
 
 export const deleteTodoAPI = async (id: number) => {
   try {
-    const response = await axios.post(BASE_URL + `todo/${id}`);
+    const response = await axios.delete(BASE_URL + `todo/${id}`);
     console.log(response);
     return response;
   } catch (e) {

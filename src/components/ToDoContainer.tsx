@@ -15,7 +15,7 @@ const ToDoContainer = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTodos());
-  }, [dispatch]);
+  }, []);
 
   return (
     <>

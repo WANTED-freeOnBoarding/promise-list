@@ -11,7 +11,7 @@ export const updateTodos = (
   id: number,
   isCheck?: boolean,
   content?: string
-) => ({ type: type.UPDATE_TODO, payload: id });
+) => ({ type: type.UPDATE_TODO, payload: { id, isCheck, content } });
 
 export const deleteTodos = (id: number) => ({
   type: type.DELETE_TODO,

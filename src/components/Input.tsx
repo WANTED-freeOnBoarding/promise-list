@@ -25,6 +25,7 @@ const Input = () => {
     <>
       <form onSubmit={onSubmit}>
         <input
+          className="input__todo"
           type="text"
           placeholder="할 일을 적어주세요"
           name="todo"
