@@ -9,14 +9,12 @@ const Input = () => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (inputValue !== "") {
-      console.log(inputValue);
       dispatch(createTodos(inputValue));
       setInputValue("");
     }
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     setInputValue(e.target.value);
   };
 

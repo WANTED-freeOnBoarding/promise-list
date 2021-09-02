@@ -11,7 +11,7 @@ h1 {
   /*align-self: center;*/
   height: 50px;
   border-radius: 20px;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
   margin: auto;
   margin-top: 25px;
@@ -32,6 +32,7 @@ h1 {
 }
 
 button {
+  cursor: pointer;
   border: none;
   background-color: pink;
 }
@@ -65,4 +66,13 @@ button {
 
 .todo__checkbox {
   border: none;
+  background-color: lightpink;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  font-size: 25px;
+}
+
+.todo__checkbox:hover {
+  cursor: pointer;
 }

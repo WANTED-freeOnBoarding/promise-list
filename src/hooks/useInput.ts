@@ -8,7 +8,6 @@ export const useInput = (initialValue: string) => {
       target: { value },
     } = event;
     setInput(value);
-    console.log(value);
   };
   return { input, onChange };
 };

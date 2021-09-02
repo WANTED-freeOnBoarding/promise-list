@@ -6,7 +6,7 @@ import * as type from "./types";
 export interface ITodo {
   id: number;
   content: string;
-  isCheck: boolean;
+  is_check: boolean;
   created_at: Date;
   updated_at: Date;
 }

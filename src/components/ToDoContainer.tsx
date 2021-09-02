@@ -9,9 +9,6 @@ import { ITodo } from "store/todos";
 
 const ToDoContainer = () => {
   const { data, error } = useSelector((state: RootState) => state.todos);
-  if (data && data.data && data.data.todoList) {
-    console.log("============", data.data.todoList);
-  }
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTodos());

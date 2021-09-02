@@ -28,14 +28,12 @@ const ToDoItem = (props: ToDoItemProps) => {
     e.preventDefault();
     const updateTasKName = taskNameRef.current! as HTMLElement;
     const updateText = updateTasKName.innerText;
-    console.log(updateText);
     setIsEdit(false);
     dispatch(updateTodos(todo.id, undefined, updateText));
   };
 
   const onCheck = () => {
-    console.log(">>", todo.isCheck);
-    dispatch(updateTodos(todo.id, !todo.isCheck));
+    dispatch(updateTodos(todo.id, !!!todo.is_check));
   };
 
   const onEditStart = () => {
@@ -44,13 +42,9 @@ const ToDoItem = (props: ToDoItemProps) => {
 
   return (
     <div className="todo">
-      <input
-        type="checkbox"
-        className="todo__checkbox"
-        onChange={onCheck}
-        checked={todo.isCheck ?? false}
-      />
-      {todo.isCheck}
+      <button className="todo__checkbox" onClick={onCheck}>
+        {todo.is_check ? "✘" : ""}
+      </button>
       <div
         className="todo__title"
         ref={taskNameRef}
@@ -60,14 +54,14 @@ const ToDoItem = (props: ToDoItemProps) => {
         {todo.content}
       </div>
       <div className="todo__date">{todo.updated_at}</div>
-      <div className="todo__delete">
+      <button className="todo__delete">
         {isEdit ? (
           <button onClick={(e) => onEditFinish(e)}>OK</button>
         ) : (
           <EditSvg onClick={onEditStart} />
         )}
         <DeleteSvg onClick={onDelete} />
-      </div>
+      </button>
     </div>
   );
 };
