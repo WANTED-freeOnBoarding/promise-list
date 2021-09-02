@@ -1,0 +1,78 @@
+h1 {
+  border-bottom: 2px solid darkolivegreen;
+}
+
+.todo {
+  width: 500px;
+  background-color: pink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*align-self: center;*/
+  height: 50px;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  margin: auto;
+  margin-top: 25px;
+  overflow: scroll;
+}
+
+.input__todo {
+  width: 450px;
+  height: 50px;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.form__todo {
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: pink;
+}
+
+.plus__todo {
+  transform: translateY(10px);
+  height: 70px;
+  width: 70px;
+  font-size: 40px;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+.todo__lists {
+  margin-top: 25px;
+  width: 100vh;
+  height: 500px;
+  overflow: scroll;
+}
+
+.todo__container {
+  height: 80vh;
+  margin: auto;
+}
+
+.todo__date {
+  font-size: 10px;
+  color: gray;
+}
+
+.todo__checkbox {
+  border: none;
+  background-color: lightpink;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  font-size: 25px;
+}
+
+.todo__checkbox:hover {
+  cursor: pointer;
+}
