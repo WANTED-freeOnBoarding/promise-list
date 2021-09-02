@@ -58,6 +58,8 @@ https://user-images.githubusercontent.com/60090391/131777468-97a12e02-4924-4aa0-
 ```
 git clone https://github.com/WANTED-freeOnBoarding/promise-list.git
 yarn install
-tsc -w (-w옵션은 실시간으로 컴파일 해주므로 다른 터미널에서 켭니다.)
-yarn start (마찬가지로 계속 돌아가야 하므로 또 다른 터미널)
+tsc -w 
+yarn start 
 ```
+- `tsc - w` : -w옵션은 실시간으로 컴파일 해주므로 다른 터미널에서 켭니다.
+- `yarn start` : 마찬가지로 계속 돌아가야 하므로 또 다른 터미널
