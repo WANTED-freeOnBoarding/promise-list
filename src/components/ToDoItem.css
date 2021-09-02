@@ -23,10 +23,24 @@
   margin-top: 25px;
 }
 
+.form__todo {
+  position: fixed;
+  bottom: 50px;
+  left: 125px;
+}
+
 button {
   border: none;
+  transform: translateY(10px);
   background-color: pink;
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
   font-size: 40px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.todo__lists {
+  width: 500px;
+  height: 200px;
 }

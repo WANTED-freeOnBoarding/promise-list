@@ -23,7 +23,7 @@ const Input = () => {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form className="form__todo" onSubmit={onSubmit}>
         <input
           className="input__todo"
           type="text"
