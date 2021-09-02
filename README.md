@@ -8,14 +8,18 @@ https://user-images.githubusercontent.com/60090391/131777468-97a12e02-4924-4aa0-
 
 
 
-### 배포 : 
+### 배포 : https://wanted-freeonboarding.github.io/promise-list/
+
 
 ### figma : https://www.figma.com/file/Yn2T1PrpMAvqXM8986a3FX/wanted-team-library?node-id=312%3A2
 
-- 나와의 약속
+<img width="784" alt="스크린샷 2021-09-02 오후 12 42 43" src="https://user-images.githubusercontent.com/60090391/131778376-8b9e51fb-753a-4be1-bacd-6ce72d512767.png">
+(시간이 부족해 미처 랜딩페이지를 추가하지 못해 아쉬운 마음에... 추후 업데이트를 기대해주세요!😜)
+
+- 기획 컨셉 : 나와의 약속
     - MZ세대는 보다 개인화되어 집단보다 개인의 가치를 추구하는 성향이 있다.
 
-        → to do list of the MZ, by the MZ, for the MZ
+        → to do list of the MZ, by the MZ, for the MZ !
 
     - 자신을 소중히 함은 물론 자신과의 __약속(Promise)__도 소중히 여기므로써 자존감을 높이고 
       
