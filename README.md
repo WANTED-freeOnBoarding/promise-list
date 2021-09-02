@@ -44,7 +44,7 @@ https://user-images.githubusercontent.com/60090391/131777468-97a12e02-4924-4aa0-
     - 구현하기 위해 사용된 기술 스택
         - HTML
         - CSS
-        - JS
+        - TS
         - React
         - Redux
         - Redux saga
