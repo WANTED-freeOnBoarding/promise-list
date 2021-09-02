@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+### Promise-list
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
+https://user-images.githubusercontent.com/60090391/131777468-97a12e02-4924-4aa0-bd6c-9358fd2111ce.mov
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 배포 : 
 
-### `yarn build`
+### figma : https://www.figma.com/file/Yn2T1PrpMAvqXM8986a3FX/wanted-team-library?node-id=312%3A2
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 나와의 약속
+    - MZ세대는 보다 개인화되어 집단보다 개인의 가치를 추구하는 성향이 있다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        → to do list of the MZ, by the MZ, for the MZ
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - 자신을 소중히 함은 물론 자신과의 __약속(Promise)__도 소중히 여기므로써 자존감을 높이고 
+      
+      자기 발전을 추구할 수 있는 가치를 선사할 수 있는 웹 서비스를 제공한다.
+      (개발자에게 promise는 조금 다른 의미지만...)
+    - 기존의 투두리스트와 형식이 같으므로 당연히 일정도 효율적으로 관리할 수 있다.
+    - 로그인 기능을 추가하여 다른 사람과의 약속도 함께 추가할 수 있게 만들 예정이다.
+   
+- 디자인 : 카카오톡 형식
+    - 메인 컬러 : 미정(어쩌다보니 핑크)
+    - 이유
+        - 1이 사라지지 않으면 초조한 현대인들의 심리를 자극하여 해야 할 일을 미루지 않고 보다 성실히 마무리할 수 있도록 독려함
+        - 친숙한 디자인으로 사용자가 거부감없이 보다 빠르게 적응할 수 있음
+- 기능
+    - ToDoList 기능 구현 목록
+        - Create : 만들고
+        - Read : 읽고
+        - Update : 수정하고
+        - Delete : 지운다!
+    - 구현하기 위해 사용된 기술 스택
+        - HTML
+        - CSS
+        - JS
+        - React
+        - Redux
+        - Redux saga
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- git flow
+    - main (배포 가능 수준) ← develop (개발 중) ← feature/기능
