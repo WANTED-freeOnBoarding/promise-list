@@ -9,6 +9,7 @@
     "@types/react-dom": "^17.0.9",
     "@types/styled-components": "^5.1.13",
     "axios": "^0.21.1",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
@@ -26,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "yarn build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +51,6 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0"
-  }
+  },
+  "homepage": "https://WANTED-freeOnBoarding.github.io/promise-list/"
 }
