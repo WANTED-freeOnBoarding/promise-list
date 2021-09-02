@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/60090391/131777468-97a12e02-4924-4aa0-
 
         → to do list of the MZ, by the MZ, for the MZ !
 
-    - 자신을 소중히 함은 물론 자신과의 __약속(Promise)__도 소중히 여기므로써 자존감을 높이고 
+    - 자신을 소중히 함은 물론 자신과의 *약속(Promise)*도 소중히 여기므로써 자존감을 높이고 
       
       자기 발전을 추구할 수 있는 가치를 선사할 수 있는 웹 서비스를 제공한다.
       (개발자에게 promise는 조금 다른 의미지만...)
